@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\SearchBooks;
+use App\Http\Controllers\buku;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-    Route::get('/book-search', function () {
-        return view('search-books');
-    })->name('book.search');
-
-    Route::post('/book-search', [SearchBooks::class, 'search'])->name('book.search.submit');
 });
 
+Route::get('dashboard/book-search', [SearchBooks::class, 'search'])->name('book.search');
+Route::get('dashboard/book-search{id}', [SearchBooks::class, 'search'])->name('book.search.submit');
+
+// {
+//         return view('search-books');
+//     })->name('book.search');

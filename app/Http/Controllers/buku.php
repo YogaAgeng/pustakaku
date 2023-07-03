@@ -11,9 +11,24 @@ class buku extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
+        return view('dashboard');
+    }
 
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+
+        $response = Http::get('https://www.googleapis.com/books/v1/volumes', [
+            'q' => $searchTerm,
+        ]);
+
+        $data = $response->json();
+
+        $books = isset($data['items']) ? $data['items'] : [];
+
+        return view('dashboard', compact('books'));
     }
 
     /**

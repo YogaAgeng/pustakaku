@@ -16,9 +16,26 @@
             </form>
         </div>
     </div>
-    <ul>
-        @foreach($books as $book)
-            <li>{{ $book['volumeInfo']['title'] }} by {{ implode(', ', $book['volumeInfo']['authors']) }}</li>
-        @endforeach
-    </ul>
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            {{-- <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Buku</th>
+                    <th>Penerbit</th>
+                    <th>Tahun Terbit</th>
+                </tr>
+            </thead> --}}
+            <tbody>
+                @foreach($books as $index => $book)
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $book['volumeInfo']['title'] }}</td>
+                    <td>{{ $book['volumeInfo']['publisher'] }}</td>
+                    <td>{{ $book['volumeInfo']['publishedDate'] }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -107,7 +107,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <livewire:search-books>
+                                        <livewire:search-books />
                                     </tbody>
                                 </table>
                             </div>
