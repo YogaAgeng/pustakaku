@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\SearchBooks;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/book-search', function () {
+        return view('search-books');
+    })->name('book.search');
+
+    Route::post('/book-search', [SearchBooks::class, 'search'])->name('book.search.submit');
 });
+
