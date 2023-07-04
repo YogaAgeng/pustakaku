@@ -19,6 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index', function () {
+    return view('welcome');
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -28,10 +37,3 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
-Route::get('dashboard/book-search', [SearchBooks::class, 'search'])->name('book.search');
-Route::get('dashboard/book-search{id}', [SearchBooks::class, 'search'])->name('book.search.submit');
-
-// {
-//         return view('search-books');
-//     })->name('book.search');

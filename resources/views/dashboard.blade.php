@@ -1,185 +1,257 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-app-layout>
+    {{-- <x-slot name="header"> --}}
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight"> --}}
+            <!DOCTYPE html>
+            <html lang="en">
 
-<head>
+            <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                <meta name="author" content="">
 
-    <title>Dashboard</title>
+                <title>Dashboard</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <link href="{{ url('/templates/sbadmin2/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
-        type="text/css">
+                <!-- Custom fonts for this template-->
+                <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+                <link
+                    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+                    rel="stylesheet">
+                <link href="{{ url('/templates/sbadmin2/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+                    type="text/css">
 
-    <!-- Custom styles for this template-->
-    <!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
-    <link href="{{ url('/templates/sbadmin2/css/sb-admin-2.min.css') }}" rel="stylesheet">
+                <!-- Custom styles for this template-->
+                <!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
+                <link href="{{ url('/templates/sbadmin2/css/sb-admin-2.min.css') }}" rel="stylesheet">
+                @livewireStyles
+            </head>
 
+            <body id="page-top">
 
-</head>
+                <!-- Page Wrapper -->
+                <div id="wrapper">
 
-<body id="page-top">
+                    <!-- Sidebar -->
+                    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <!-- <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div> -->
+                            <div class="sidebar-brand-text mx-3">Menu</div>
+                        </a>
 
-        <!-- Sidebar -->
+                        <!-- Divider -->
+                        <hr class="sidebar-divider my-0">
 
-        <!-- End of Sidebar -->
+                        <!-- Nav Item - Dashboard -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                <i class="fas fa-fw fa-tachometer-alt"></i>
+                                <span>Dashboard</span></a>
+                        </li>
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Divider -->
+                        <hr class="sidebar-divider">
 
-            <!-- Main Content -->
-            <div id="content">
+                    </ul>
+                    <!-- End of Sidebar -->
 
-                <!-- Topbar -->
+                    <!-- Content Wrapper -->
+                    <div id="content-wrapper" class="d-flex flex-column">
 
-                <!-- End of Topbar -->
+                        <!-- Main Content -->
+                        <div id="content">
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                            <!-- Begin Page Content -->
+                            <div class="container-fluid">
 
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                        <!-- Page Heading -->
-                        <h1 class="h3 mb-5 text-gray-800 mt-5">List Buku Perpustakaanku</h1>
-                        {{-- <p class="mb-4">lorem</p> --}}
-
-
-                        <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                            <!-- Nav Item - User Information -->
-                            <li class="nav-item dropdown no-arrow">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Profile</span>
-                                </a>
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <form method="post" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">
-                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                        </button>
-                                        </form>
+                                <!-- Page Heading -->
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                                 </div>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Hasil Pencarian</h6>
+
+                                <!-- Content Row -->
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-primary shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                            Jumlah Buku</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-book fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content Row -->
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModal">
+                                                Tambah Buku
+                                            </button>
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Buku
+                                                            </h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form wire:submit.prevent="save">
+                                                                <div class="mb-3">
+                                                                    <label for="book_name" class="form-label">{{ __('Nama Buku') }}</label>
+                                                                    <input type="text" class="form-control" wire:model="title">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="book_author" class="form-label">Penerbit</label>
+                                                                    <input type="text" class="form-control" id="book_author" name="book_author"
+                                                                        placeholder="Penerbit">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="book_release" class="form-label">Tahun
+                                                                        Terbit</label>
+                                                                    <input type="text" class="form-control" id="book_release" name="book_release"
+                                                                        placeholder="Tahun Terbit">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Simpan
+                                                                Buku</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="input-group mb-3">
+                                            <form
+                                                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                                <div class="input-group"
+                                                    style="border:1px solid #4e73df;border-radius:5px">
+                                                    <input type="text" class="form-control bg-light border-0 small"
+                                                        placeholder="Search">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="submit">
+                                                            <i class="fas fa-search fa-sm"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <table class="table table-bordered border-dark">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nomor</th>
+                                                <th scope="col">Nama Buku</th>
+                                                <th scope="col">Penerbit</th>
+                                                <th scope="col">Tahun Terbit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Harry Potter</td>
+                                                <td>JK Rowling</td>
+                                                <td>1999</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Buku</th>
-                                            <th>Penerbit</th>
-                                            <th>Tahun Terbit</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <livewire:search-books />
-                                    </tbody>
-                                </table>
+
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white">
+                            <div class="container my-auto">
+                                <div class="copyright text-center my-auto">
+                                    <span>Perpustakaanku &copy; 2023</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+
+                    </div>
+                    <!-- End of Content Wrapper -->
+
+                </div>
+                <!-- End of Page Wrapper -->
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <form method="post" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="btn btn-secondary" type="submit">Log Out
+
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+                <!-- Bootstrap core JavaScript-->
+                <script src="{{ url('/templates/sbadmin2/vendor/jquery/jquery.min.js') }}"></script>
+                <script src="{{ url('/templates/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Perpustakaanku &copy; 2023</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+                <!-- Core plugin JavaScript-->
+                <script src="{{ url('/templates/sbadmin2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    {{-- <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ url('/templates/sbadmin2/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url('/templates/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ url('/templates/sbadmin2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ url('/templates/sbadmin2/js/sb-admin-2.min.js') }}"></script>
+                <!-- Custom scripts for all pages-->
+                <script src="{{ url('/templates/sbadmin2/js/sb-admin-2.min.js') }}"></script>
 
 
-    <!-- Page level plugins -->
-    <script src="{{ url('/templates/sbadmin2/vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ url('/templates/sbadmin2/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ url('/templates/sbadmin2/js/demo/chart-pie-demo.js') }}"></script>
+                <!-- Page level plugins -->
+                <script src="{{ url('/templates/sbadmin2/vendor/chart.js/Chart.min.js') }}"></script>
 
 
-</body>
+                <!-- Page level custom scripts -->
+                <script src="{{ url('/templates/sbadmin2/js/demo/chart-area-demo.js') }}"></script>
+                <script src="{{ url('/templates/sbadmin2/js/demo/chart-pie-demo.js') }}"></script>
+                @livewireScripts
 
-</html>
+            </body>
+
+            </html>
+
+</x-app-layout>
